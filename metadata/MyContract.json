@@ -1,0 +1,12 @@
+{
+  "name": "My Contract",
+  "description": "",
+  "version": "1.0.0",
+  "authors": [""],
+  "license": {
+    "name": "MIT",
+    "details": "MIT License"
+  },
+  "homepage": "",
+  "interfaces": []
+}

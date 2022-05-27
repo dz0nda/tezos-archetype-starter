@@ -1,0 +1,11 @@
+/**
+* MyContract
+**/
+archetype MyContract(owner : address) with metadata ""
+
+entry setOwner(newOwner : address) {
+    called by owner
+    effect {
+        owner := newOwner
+    }
+}

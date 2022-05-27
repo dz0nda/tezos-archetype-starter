@@ -1,0 +1,41 @@
+{
+  "name": "tezos-archetype-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "npx eslint ./",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier ./ --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "privatenet:start": "COMPOSE_PROJECT_NAME=bcdbox TAG=4.1.0 docker-compose -f ./docker/docker-compose.privatenet.yml up -d",
+    "privatenet:stop": "COMPOSE_PROJECT_NAME=bcdbox TAG=4.1.0 docker-compose -f ./docker/docker-compose.privatenet.yml down -v",
+    "deploy:mockup": "env STAGE=mockup mocha ./scripts/deploy.js --timeout 0 --slow 0",
+    "deploy:privatenet": "env STAGE=privatenet mocha ./scripts/deploy.js --timeout 0 --slow 0",
+    "deploy:testnet": "env STAGE=testnet mocha ./scripts/deploy.js --timeout 0 --slow 0",
+    "deploy:mainnet": "env STAGE=mainnet mocha ./scripts/deploy.js --timeout 0 --slow 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dz0nda/tezos-archetype-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dz0nda/tezos-archetype-starter/issues"
+  },
+  "homepage": "https://github.com/dz0nda/tezos-archetype-starter#readme",
+  "devDependencies": {
+    "@completium/completium-cli": "^0.3.39",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.0",
+    "prettier": "^2.6.2"
+  }
+}
